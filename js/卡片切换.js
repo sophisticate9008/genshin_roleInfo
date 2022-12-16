@@ -149,6 +149,8 @@ function onload_weapon() {
 
 function onload_artifact() {
     $("#artifact").children().remove()
+    var reg1 = /百分比/
+    var reg2 = /[暴率]/
     var artifact_html = '<div class="artifacts"><img src="https://enka.network/ui/{0}.png">    <span style="display:block; position:absolute; left:1%; top:55.5%;width:6em; height:1em; text-align:center;">{1}<br><span style="font-size: 0.5em;">{2}<br>{3}</span></span>    <div class="artifact_table">        <table>            <tbody>                <thead id="artifact_attr_name">                    <th>{4}</th>                    <th>{5}</th>                    <th>{6}</th>                    <th>{7}</th>                        </thead>                       <thead id="artifact_attr_value">                    <th>{8}</th>                    <th>{9}</th>                    <th>{10}</th>                    <th>{11}</th>                        </thead>                                       </tbody>        </table>    </div></div>'
     var artifacts = role_sel_info['圣遗物']
     for (let i in artifacts) {
@@ -157,11 +159,14 @@ function onload_artifact() {
             arg2 = artifact_info['名称'],
             arg3 = artifact_info['主属性']['属性名'].replace('元素伤害加成', '伤加成'),
             arg4 = String(artifact_info['主属性']['属性值']),
-            attr_info = artifact_info['词条']
+            attr_info = artifact_info['词条'];
+        console.log(arg3 + '         ')
+        if (arg3.search("百分比") != -1 || arg3.search('暴') != -1) {
+            arg3 = arg3.replace('百分比', '')
+            arg4 = arg4 + '%'
+        }
         var args_list = []
         for (let j in attr_info) {
-            var reg1 = /百分比/
-            var reg2 = /[暴率]/
             if (reg1.exec(attr_info[j]['属性名'])) {
                 args_list.push(attr_info[j]['属性名'].substring(3))
                 args_list.push(attr_info[j]['属性值'] + '%')
