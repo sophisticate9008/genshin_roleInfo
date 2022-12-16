@@ -1,0 +1,31 @@
+#role_select {
+    width: 25%;
+    position: absolute;
+    border-radius: 2em;
+    left: 5%;
+    top: 4%;
+    height: 90%;
+    box-shadow: 0 4px 9px rgba(255, 255, 255, 0.4) inset, 0 0 20px #88e1ff;
+    overflow: scroll;
+}
+.role_icon{
+    float: left;
+    width: 21%;
+    box-shadow: 6px 6px 6px rgba(255, 255, 255, 0.4) inset, 0 0 8px rgba(255, 255, 254, 0.6);
+    background-color: #ffffff00;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border-radius: 12em;
+    background-size: 100%;
+    background-position: 0px 2px;
+    display: none;
+    margin: 2%;
+    border-color: rgba(127, 253, 77, 0.5);
+
+}
+.role_icon:hover {
+    box-shadow: 6px 6px 6px rgba(255, 255, 254, 0.4) inset, 0 0 20px rgba(255, 255, 254, 0.6);
+}
+.role_icon:focus {
+    box-shadow: 6px 6px 6px rgba(255, 255, 255, 0.4) inset, 0 0 20px #ffffff;
+}

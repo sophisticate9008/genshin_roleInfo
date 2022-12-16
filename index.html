@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Cache-Control" content="max-age=604800" />
+        <!-- 开启缓存 -->
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <title>原神面板查询服务</title>
+        <link rel="stylesheet" type="text/css" href="css/role_sel.css">
+        <link rel="stylesheet" type="text/css" href="css/role_card.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/player_info.css">
+        <script src="js/前置函数.js"></script>
+        <style>
+            @font-face {
+                font-family: "yuanshen";
+                src: url('font/yuanshen.ttf');
+            }
+            body {
+                width: 1980px;
+                height: 1080px;
+                background-color: black;
+                font-weight: bold;
+                font-family: yuanshen;
+                color: white;
+                text-align: center;
+                user-select: none;
+            }
+        </style>
+       </head>
+    <body id="body">
+        <div id="title">
+            <span>
+                原神面板查询服务<span style="font-size: 0.5em;">切换uid请重载(刷新)页面,数据来自enka.network</span>
+            </span>
+        </div>
+        <div id="actions">
+            <div id="scanf">
+                <input type="text" value="" class="inputText" maxlength="9" onclick="if(this.value == '在此输入uid') {this.value = ''}"
+                    onblur="if(this.value == '') {this.value = '在此输入uid'}">
+            </div>            
+            <div id="buttonL">
+                <button onclick="save_data()" class="func_button">保存</button>
+                <button onclick="get_update()" class="func_button">更新</button>
+            </div>
+            <div id="buttonR">
+                <button onclick="onload_data()" class="func_button">加载</button>
+                <button id="downloads" class="func_button">下载</button>
+            </div>
+            
+        </div>
+        <div id="tip">
+            <span>
+                更新:用于从网络上获取数据<br> 保存:将此次获得的数据保存下来,并将下载链接传送到下载按钮<br> 下载:右键另存为 保存到项目文件夹user_data中并且覆盖掉旧版<br> 加载:如果按照上述步骤,点击加载直接可以获取本地数据
+            </span>
+        </div>
+        <div id="role_select">
+            
+        </div>
+        <div id="role_card_border" style="display: block;"> </div>
+        <div id="role_card">
+            <div id="role_updata_time">
+                2022.45.6545.5
+            </div>
+            <div id="role_pic">
+            </div>
+            <div id="destiny">
+            </div>
+            <div id="talent">
+                <div id="talent_level_0" class="talent_level"></div>
+                <div id="talent_level_1" class="talent_level"></div>
+                <div id="talent_level_2" class="talent_level"></div>
+            </div>
+            <div id="data_overall">
+                <table>
+                    <tbody>
+                        <thead id="attr_name">
+                            <th>角色名称</th>
+                            <th>等级</th>
+                            <th>生命值</th>
+                            <th>攻击力</th>
+                            <th>防御力</th>
+                            <th>元素精通</th>
+                            <th>暴击率</th>
+                            <th>暴击伤害</th>
+                            <th>元素充能</th>
+                            <th>伤害加成</th>            
+                        </thead>
+                        <thead id="attr_value">
+          
+                        </thead>
+                    </tbody>
+
+                </table>
+            </div>
+            <div id="weapon">
+                <div id="weapon_info">
+                    <span id="weapon_name" style="font-size: 2em;"></span>
+                    <br><br>
+                    <span id="weapon_refine"></span>
+                    <br>
+                    <span id="weapon_level"></span>
+                    <div id="weapon_star">
+                        
+                    </div>
+                </div>
+                <div id="weapon_pic">
+                </div>
+            </div>
+            <div id="artifact">
+
+            </div>
+        </div>
+        <div id="player_info_border" style="display: block;"> </div>
+        <div id="player_info">
+            <div id="player_name">
+
+            </div>
+            <div id="player_sign">
+
+            </div>
+            <div id="player_level">
+
+            </div>
+            <div id="player_achieve_num">
+
+            </div>
+            <div id="player_updata_time">
+             
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var winWidth = window.innerWidth
+        var size = winWidth / 140
+        var body = document.getElementById('body')
+        body.style.fontSize = size + 'px'
+        console.log(body.style.fontSize)
+        var round2R = $('#actions').css("height")
+        $('button').css("width", round2R)
+    </script>
+    <script src="data/alias.txt"></script>
+    <script src="data/artifact.txt"></script>
+    <script src="data/prop.txt"></script>
+    <script src="data/roles_data.txt"></script>
+    <script src="data/roles_name.txt"></script>
+    <script src="data/roles_skill.txt"></script>
+    <script src="data/roles_talent.txt"></script>
+    <script src="data/score.txt"></script>
+    <script src="data/weapon.txt"></script>
+    <script type="text/javascript" src="js/全部参数.js"></script>
+    <script type="text/javascript" src="js/功能按钮.js"></script>
+    <script src="js/创建按钮.js"></script>
+    <script src="js/卡片切换.js"></script>
+    <script id="local_data"></script>
+    <script type="text/javascript" src="js/背景特效.js" opacity= 0.7></script>
+</html>

@@ -1,0 +1,100 @@
+
+
+#title {
+    position: absolute;
+    font-size: 2em;
+    width: 30%;
+    top: 3%;
+    height: 2%;
+    left: 35%;
+}
+#actions {
+    position: absolute;
+    width: 40%;
+    height: 5%;
+    left: 30%;
+    top: 8%;
+}
+#scanf {
+    position: absolute;
+    width: 40%;
+    left: 30%;
+    font-size: 0.8em;
+    height: 100%;
+}
+.inputText {
+    width: 70%;
+    height: 95%;
+    left: 15%;
+    outline: none;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: yuanshen;
+    text-align: center;
+    border-radius: 2em;
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+    box-shadow: 0 4px 9px rgba(148, 214, 252, 0.4) inset, 0 0 30px #88e1ff;
+    white-space:nowrap;
+    box-sizing: border-box;
+    display: flexbox;
+}
+input:focus {
+    background-color: rgba(84, 192, 255, 0.911);
+}
+input:hover {
+    background-color: rgba(84, 192, 255, 0.911);
+}
+
+#buttonL {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    left: 15%;
+    top: 0;
+    font-size: 0.5em;
+    
+}
+#buttonR {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    right: 15%;
+    top: 0;
+    font-size: 0.5em;
+    
+}
+.func_button {
+    border: none;
+    height: 100%;
+    border-radius: 50%;
+    font-family: yuanshen;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 9px rgba(255, 255, 255, 0.4) inset, 0 0 30px #88e1ff;
+}
+
+.func_button:focus {
+    background-color: rgba(63, 250, 172, 0.6);
+}
+.func_button:hover {
+    background-color: rgba(63, 250, 172, 0.6);
+}
+#tip {
+    position: absolute;
+    background-color: rgba(202, 204, 204, 0.1);
+    width: 30%;
+    box-shadow: 0 4px 9px rgba(255, 255, 255, 0.4) inset, 0 0 30px #88e1ff; 
+    right: 5%;
+    top: 7%;
+    border-radius: 1em;
+    text-align: center;
+    font-weight: normal;
+    color: yellowgreen;
+}
+
+div::-webkit-scrollbar {
+    display: none;
+}

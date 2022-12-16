@@ -1,0 +1,225 @@
+#role_card, #role_card_border{
+    position: absolute;
+    width: 59%;
+    right: 5%;
+    top: 16%;
+    z-index: 0;
+    border-radius: 1.5em;
+    box-shadow: 0 4px 9px rgba(255, 255, 255, 0.4) inset, 0 0 20px #88e1ff;
+    height: 60%;
+
+    overflow:hidden;
+    background-repeat: no-repeat;
+    background-size:100%;
+    display: none;
+
+}
+#role_pic {
+    position:absolute;
+    width: 80%;
+    height: 100%;
+    left: 0;
+    background-position: -35em;
+    background-size: 100em;
+    background-repeat: no-repeat;
+    
+
+}
+
+#destiny {
+    width: 5%;
+    height: 50%;
+    position: absolute;
+    left: 1%;
+    bottom: 1%;
+    float: center;
+    
+}
+.destinyIcon {
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    margin: 0.25em;
+    backdrop-filter: blur(3px);
+    background-size: 80%, 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#talent {
+    position: absolute;
+    width: 15em;
+    height: 6em;
+    top: 0;
+    right: 1%;
+    
+}
+.talentIcon {
+    width: 4em;
+    margin: 0.5em;
+    margin-top: -1em;
+    height: 4em;
+    float: left;
+    border-radius: 50%;
+    background-size: 80%, 100%;
+    backdrop-filter: blur(3px);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+.talent_level {
+    position: relative;
+    z-index: 3;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    border-radius: 0.3em;
+    width: 2em;
+    height: 1.5em;
+    background-color: white;
+    float: left;
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+}
+#data_overall {
+    position: absolute;
+    width: 15em;
+    height: 60%;
+    top: 10%;
+    right:0%;
+}
+#attr_name{
+    display: block;
+    float: left;
+}
+#attr_value{
+    display: block;
+    float: right;
+}
+#attr_name th{
+    width: 4em;
+    height: 2em;
+    line-height: 2em;
+    display: block;
+    text-align: left;
+    font-size: 1em;
+    
+    
+}
+#attr_value th {
+    width: 9em;
+    height: 2em;
+    display: block;
+    text-align: right;
+    line-height: 2em;
+    font-size: 1em;
+}
+table {
+    background-color: rgba(85, 77, 77, 0.274);
+    border-radius: 0.5em;
+    
+}
+tr {
+    display: block;
+}
+th:nth-child(odd) {
+    background-color: rgba(185, 168, 168, 0.274);
+}
+
+#weapon {
+    position: absolute;
+    width: 13em;
+    right: 2%;
+    bottom: 2%;
+    height: 40%;
+}
+#weapon_info {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    top: 5%;
+    float: right;
+}
+#weapon_pic {
+    position: absolute;
+    width: 100%;
+    height: 13em;
+    top:33%;
+    right: -12%;
+}
+#weapon_info span {
+    position:absolute; 
+    right: 0;
+}
+#weapon_star{
+    color: gold;
+    position: absolute;
+    width: 50%;
+    height: 1em;
+    font-size: 1.2em;
+    left: 35%;
+    top: 60%;
+    
+}
+#artifact {
+    height: 100%;
+    width: 25%;
+    position: absolute;
+    left: 55%;
+
+    float: left;
+}
+.artifacts {
+    height: 19.1%;
+    margin: 2%;
+    width: 96%;
+    background-color: rgba(202, 212, 212, 0.199);
+    position: relative;
+}
+.artifacts img{
+    height: 70%;
+    display: block;
+    backdrop-filter: blur(2px);
+}
+.artifacts span {
+    background-color: rgba(136, 150, 150, 0.322);
+    backdrop-filter: blur(2px);   
+}
+#artifact_attr_name {
+    display: block;
+    float: left;
+}
+
+#artifact_attr_value {
+    display: block;
+    float: right;
+}
+.artifact_table {
+    position: absolute;
+    right: 2%;
+    top: 1%;
+}
+#artifact_attr_name th {
+    width: 7em;
+    height: 2.4em;
+    line-height: 2.4em;
+    display: block;
+    text-align: left;
+    font-size: 0.8em;
+}
+#artifact_attr_value th {
+    width: 7em;
+    height: 2.4em;
+    line-height: 2.4em;
+    display: block;
+    text-align: right;
+    font-size: 0.8em;    
+}
+#role_updata_time {
+    position: absolute;
+    font-size: 0.5em;
+    left: 2%;
+    top: 0;
+    backdrop-filter: blur(2px);
+    z-index: 2;
+}

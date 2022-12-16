@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js保存json到本地</title>
+</head>
+<body>
+
+<div id="div"></div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+
+    var div=document.getElementById('div');
+    //生成json数据
+    var total = 1000, json = [];
+    for(var i = 0; i < total; i++){
+        json.push({id:i+"df4"+(i+45)+"urt",column:(i+3)});
+    }
+    //json转string字符串
+    var content = JSON.stringify(json);
+    var a = document.createElement('a');
+    a.text = "sss"
+    a.download = "jsonjson.json";
+    var blob = new Blob([content]);
+    //转blob
+    a.href = URL.createObjectURL(blob);
+    // 添加到body
+    div.appendChild(a);
+    //点击
+    
+    // 删除a
+   // div.removeChild(a);
+</script>
+</body>
+

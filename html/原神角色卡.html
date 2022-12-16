@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            @font-face {
+                font-family: "yuanshen";
+                src: url('../font/yuanshen.ttf');
+            }
+            body {
+                background-color: black;
+                font-size: 14px;
+            }
+            #bianjie {
+                font-family: yuanshen;
+                position: relative;
+                width: 30%;
+                height: 40em;
+                top: 30%;
+                left: 35%;
+                font-size: 2em;
+                color: white;
+                background: url('../res/background/背景_水.png');
+                user-select: none;
+            }
+            #jueselihui {
+                position: absolute;
+                width: 90%;
+                height: 40%;
+                top: 0;
+                left: 0;
+                background: url('../../img/UI_Gacha_AvatarImg_Nilou.png');
+                background-repeat: no-repeat;
+                background-size: 150%;
+                background-position: right;
+            }
+            #areas {
+                position: absolute;
+                width: 10%;
+                height: 5%;
+                top: 0;
+                left: 0;
+                font-size: 1em;
+                background: url('../res/region/璃月.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+            #uid {
+                position: absolute;
+                width: 40%;
+                height: 5%;
+                right: 5%;
+                top: 0;
+                font-style: italic;
+                font-size: 1em;
+                color: white;
+            }
+            #roleName {
+                position: absolute;
+                width: 100%;
+                height: auto;
+                font-style: initial;
+                font-weight: bold;
+                font-size: 1em;
+            }
+            .lv {
+                width: 50%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                background: url('../res/other/等级遮罩.png');
+                color: black;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                text-align: center;
+            }
+            #shuxing{
+                width: 40%;
+                position: absolute;
+                top: 10%;
+                right: 5%;
+                font-size: 0.3em;
+                height: 28%;
+                border-radius: 5%;
+                overflow: hidden;
+            }
+            .cell:nth-child(odd) {
+                background-color: rgba(0, 0, 0, 0.1);
+            }      
+            .cell:nth-child(even) {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            .shuxingname{
+                height: 12.5%;
+                line-height: 250%;
+            }
+            #shengyiwu {
+                position: absolute;
+                left: 5%;
+                width: 90%;
+                top: 40%;
+                height: 35%;
+                background-color: aliceblue;
+            }
+            #wuqi, .shengyiwuname {
+                width: 31%;
+                height: 47%;
+                background-color: black;
+                border-color: aqua;
+                margin: 1%;
+                border-radius: 5%;
+                float: left;
+            }
+        </style>
+    </head>
+    <body id="body">
+        <div id="bianjie">
+            <div id="jueselihui"></div>
+            <div id="areas"></div>
+            <div id="uid">
+                <a>UID128951794</a>
+                <div id="roleName">
+                    甘雨
+                    <div class="lv">
+                        lv90
+                    </div>
+                </div>
+            </div>
+            <div id="shuxing">
+                <div class="shuxingname cell" id="shengming0">
+                    生命值
+                </div>
+                <div class="shuxingname cell" id="gongji0">
+                    攻击力
+                </div>
+                <div class="shuxingname cell" id="fangyu0">
+                    防御力
+                </div>
+                <div class="shuxingname cell" id="jingtong0">
+                    精通
+                </div>
+                <div class="shuxingname cell" id="baoji0">
+                    暴击
+                </div>
+                <div class="shuxingname cell" id="baoshang0">
+                    爆伤
+                </div>
+                <div class="shuxingname cell" id="chongneng0">
+                    充能
+                </div>
+                <div class="shuxingname cell" id="shanghai0">
+                    伤害加成
+                </div>
+            </div>
+            <div id="shengyiwu">
+                <div id="wuqi">
+
+                </div>
+                <div class="shengyiwuname">
+
+                </div>
+                <div class="shengyiwuname">
+                    
+                </div>
+                <div class="shengyiwuname">
+                    
+                </div>
+                <div class="shengyiwuname">
+                    
+                </div>
+                <div class="shengyiwuname">
+                    
+                </div>
+            </div>
+            <div id="shanghai">
+
+            </div>
+        </div>
+        <script type="text/javascript">
+            var winWidth = window.innerWidth
+            var size = winWidth / 140
+            var body = document.getElementById('body')
+            body.style.fontSize = size + 'px'
+        </script>
+        <script type="text/javascript" src="../js/背景特效.js" opacity= 0.7></script>
+    </body>
+</html>
