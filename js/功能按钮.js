@@ -36,27 +36,24 @@ function get_update() {
 function save_data() {
     var uid = $("input")[0].value
     var content = JSON.stringify(new_data);
-    content = 'old_data_callback(' + content + ')'
-    var a = document.createElement('a');
-    a.download = uid + '.txt';
-    var blob = new Blob([content]);
-    a.href = URL.createObjectURL(blob);
-    a.text = '下载'
-    $("#downloads").html('')
-    $("#downloads").append(a);
+    localStorage.setItem(String(uid), content)
 }
 
-function old_data_callback(data) {
-    
-    old_data = data
+function delete_data() {
+    var uid = $("input")[0].value
+    localStorage.removeItem(String(uid))
 }
 
 
 function onload_data() {
     
     var uid = $("input")[0].value
-    src_ = "user_data/" + uid + '.txt'
-    $('#local_data').attr('src', src_)
+    try {
+        old_data = JSON.parse(localStorage.getItem(String(uid)))
+    }
+    catch {
+
+    }
     try {
         setTimeout(function() {
             console.log(old_data)
