@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>故事介绍</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/前置函数.js"></script>
+    <style>
+        @font-face {
+            font-family: "yuanshen";
+            src: url('../font/yuanshen.ttf');
+        }
+        body {
+
+            background-color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-family: yuanshen;
+            color: white;
+            text-align: center;
+            user-select: none;
+            background-repeat: no-repeat;
+            background-size: 110%;
+        }
+        #main_div {
+            position: absolute;
+            width: 60%;
+            height: 100%;
+            left: 20%;
+            
+            text-align: left;
+            
+        }
+        tr:nth-child(odd) {
+            text-shadow: .2rem 0rem .5rem rgb(255, 0, 170),-.2rem 0rem .5rem rgb(255, 0, 157),0rem .2rem .5rem rgb(255, 0, 157),0rem -.2rem .5rem rgb(0, 110, 255);
+            font-size: 1.3em;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(68, 62, 62, 0.274);
+        }
+
+        #avator {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            left: 1%;
+            top: 1%;
+            border: 3px solid rgba(238, 255, 0, 0.575);
+            box-shadow: 0 4px 9px rgba(255, 255, 255, 0.4) inset, 0 0 20px #88e1ff;
+        }
+
+    </style>
+</head>
+<body id="body">
+    <div id="avator">
+    </div>
+    <div id="main_div">
+
+        <div id="table_div">
+            <table cellspacing="20">
+                <tbody id="place">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="../data/roles_data.txt"></script>
+<script src="../data/roles_name.txt"></script>
+<script>
+    $("#body").css("background-image", "url(../res/background/{0}.webp)".format(getRndInteger(1, 39)))
+    var role = getUrlParameter('role'),
+    icon_url = 'https://enka.network/ui/UI_AvatarIcon_' + roles_name['Name'][role].split('_').slice(-1)[0] + '.png'
+    $("#avator").append("<img src='{0}' style='width:100%'>".format(icon_url))
+    keys_array = Object.keys(roles_data[role]['destiny'])
+    for(let i = 0; i < 6; i++) {
+        $("#place").append('<tr><th>{0}</th></tr> <tr><th>{1}</th></tr>'.format(keys_array[i],roles_data[role]['destiny'][keys_array[i]]))
+    }
+    
+</script>
+<script type="text/javascript" src="../js/背景特效.js" opacity= 0.7></script>
+</html> 

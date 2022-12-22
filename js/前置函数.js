@@ -23,6 +23,20 @@ String.prototype.multiplyTimes = function(n) {
     return Array.prototype.join.call({length:n+1}, this);
 };
 
+function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
 
 function get_time_now() {
     var nowdate = new Date();
@@ -62,3 +76,9 @@ function get_destinyIconList_byName(_name) {
         }
     }
 }
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+} 
+
+
+

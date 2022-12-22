@@ -51,9 +51,7 @@ function onload_data() {
     try {
         old_data = JSON.parse(localStorage.getItem(String(uid)))
     }
-    catch {
-
-    }
+    catch {}
     try {
         setTimeout(function() {
             console.log(old_data)
@@ -61,8 +59,6 @@ function onload_data() {
             onload_player_card()
         }, 100)
     }
-    catch(e) {
-
-    }
+    catch(e) {}
 
 }

@@ -64,6 +64,15 @@ input:hover {
     font-size: 0.5em;
     
 }
+#buttonB {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    right: -65%;
+    top: 0;
+    font-size: 0.5em;
+    display: none;
+}
 .func_button {
     border: none;
     height: 100%;
@@ -82,18 +91,7 @@ input:hover {
 .func_button:hover {
     background-color: rgba(63, 250, 172, 0.6);
 }
-#tip {
-    position: absolute;
-    background-color: rgba(202, 204, 204, 0.1);
-    width: 30%;
-    box-shadow: 0 4px 9px rgba(255, 255, 255, 0.4) inset, 0 0 30px #88e1ff; 
-    right: 5%;
-    top: 7%;
-    border-radius: 1em;
-    text-align: center;
-    font-weight: normal;
-    color: yellowgreen;
-}
+
 
 div::-webkit-scrollbar {
     display: none;

@@ -3,8 +3,10 @@ function onload_role_card() {
     role_sel_info = data_exist['角色信息'][role_sel]
     if (front_sel != role_sel) {
         $("#role_card").fadeOut(1)
-        $("#role_card").fadeIn(800)
+        $("#role_card").fadeIn(1000)
+        $("#body").css("background-image", "url(res/background/{0}.webp)".format(getRndInteger(1, 39)))
     }
+    $('#buttonB').fadeIn(1000)
     onload_background_pic()
     onload_role_destiny()
     onload_role_talent()
@@ -13,6 +15,8 @@ function onload_role_card() {
     onload_artifact()
     $("#role_updata_time").html('最后更新于' + role_sel_info['更新时间'])
     front_sel = role_sel
+    var uid = $("input")[0].value
+    
 }
 function onload_player_card() {
     $("#player_info").fadeOut(1)
@@ -160,7 +164,7 @@ function onload_artifact() {
             arg3 = artifact_info['主属性']['属性名'].replace('元素伤害加成', '伤加成'),
             arg4 = String(artifact_info['主属性']['属性值']),
             attr_info = artifact_info['词条'];
-        console.log(arg3 + '         ')
+
         if (arg3.search("百分比") != -1 || arg3.search('暴') != -1) {
             arg3 = arg3.replace('百分比', '')
             arg4 = arg4 + '%'
@@ -179,7 +183,7 @@ function onload_artifact() {
                 args_list.push(attr_info[j]['属性名'])
                 args_list.push(String(attr_info[j]['属性值']))                   
             }
-         
+            
         }
         var remains = 8 - args_list.length
         for (let j = 0; j < remains; j++) {

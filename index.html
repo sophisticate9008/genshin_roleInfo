@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Cache-Control" content="max-age=604800" />
+        
         <!-- 开启缓存 -->
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
         <title>原神面板查询服务</title>
@@ -19,26 +19,27 @@
                 src: url('font/yuanshen.ttf');
             }
             body {
-                width: 1980px;
-                height: 1080px;
-                background-color: black;
+                background-color: rgb(0, 0, 0);
                 font-weight: bold;
                 font-family: yuanshen;
                 color: white;
                 text-align: center;
                 user-select: none;
+                background-repeat: no-repeat;
+                background-size: 110%;
             }
         </style>
        </head>
     <body id="body">
+
         <div id="title">
-            <span>
-                原神面板查询服务<span style="font-size: 0.5em;">切换uid请重载(刷新)页面,数据来自enka.network</span>
+            <span style="display: block; position:absolute; left:8%" >
+                原神面板查询服务<span style="font-size: 0.5em;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据来自enka.network</span>
             </span>
         </div>
         <div id="actions">
             <div id="scanf">
-                <input type="text" value="" class="inputText" maxlength="9" onclick="if(this.value == '在此输入uid') {this.value = ''}"
+                <input type="text" value="128951794" class="inputText" maxlength="9" onclick="if(this.value == '在此输入uid') {this.value = ''}"
                     onblur="if(this.value == '') {this.value = '在此输入uid'}">
             </div>            
             <div id="buttonL">
@@ -47,15 +48,15 @@
             </div>
             <div id="buttonR">
                 <button onclick="onload_data()" class="func_button">加载</button>
-                <button id="downloads" class="func_button">下载</button>
+                <button onclick="delete_data()" class="func_button">删除</button>
             </div>
-            
+            <div id="buttonB">
+                <button class="func_button" onclick="open_story()">故事</button>
+                <button class="func_button" onclick="open_talent()">天赋</button>
+                <button class="func_button" onclick="open_destiny()">命座</button>
+            </div>
         </div>
-        <div id="tip">
-            <span>
-                更新:用于从网络上获取数据<br> 保存:将此次获得的数据保存下来,并将下载链接传送到下载按钮<br> 下载:右键另存为 保存到项目文件夹user_data中并且覆盖掉旧版<br> 加载:如果按照上述步骤,点击加载直接可以获取本地数据
-            </span>
-        </div>
+
         <div id="role_select">
             
         </div>
@@ -140,6 +141,7 @@
         console.log(body.style.fontSize)
         var round2R = $('#actions').css("height")
         $('button').css("width", round2R)
+        $("#body").css("background-image", "url(res/background/{0}.webp)".format(getRndInteger(1, 39)))
     </script>
     <script src="data/alias.txt"></script>
     <script src="data/artifact.txt"></script>
@@ -154,6 +156,7 @@
     <script type="text/javascript" src="js/功能按钮.js"></script>
     <script src="js/创建按钮.js"></script>
     <script src="js/卡片切换.js"></script>
+    <script src="js/页面跳转.js"></script>
     <script id="local_data"></script>
     <script type="text/javascript" src="js/背景特效.js" opacity= 0.7></script>
 </html>
