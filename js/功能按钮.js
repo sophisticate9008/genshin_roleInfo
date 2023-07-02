@@ -6,7 +6,7 @@ function get_update() {
         alert("请检查输入的uid")
         return
     }
-    var url = "https://enka.shinshin.moe/u/{uid}/__data.json"
+    var url = "https://enka.network/api/uid/{uid}"
     url = url.replace('{uid}',uid)
     console.log(url)
     var origin_json
